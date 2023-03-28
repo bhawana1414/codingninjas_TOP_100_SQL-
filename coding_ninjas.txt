@@ -99,7 +99,17 @@ WHERE l1.id=l2.id-1 AND l2.id=l3.id-1
 with TEMP AS(select id,num,lag(num,1) over() as num1 ,lag(num,2) over() as num2 from logs)
 Select distinct num as con from TEMP where num = num1 and num1=num2;
 
-14:Department Highest Salary: https://www.codingninjas.com/codestudio/problems/department-highest-salary_2119329?topList=top-100-sql-problems
+14: Warehouse Manager : https://www.codingninjas.com/codestudio/problems/warehouse-manager_2181185?topList=top-100-sql-problems&leftPanelTab=0
+SELECT 
+    w.name, 
+    SUM(p.width * p.length * p.height * w.units) AS volume 
+FROM warehouse w LEFT JOIN products p ON w.product_id = p.product_id
+GROUP BY w.name;
 
+15 : Marvel Cities : https://www.codingninjas.com/codestudio/problems/marvel-cities_2242793?topList=top-100-sql-problems&leftPanelTab=1
+SELECT * 
+FROM city 
+WHERE CountryCode = 'Marv' AND population > 100000;
 
+16 :: 
 
